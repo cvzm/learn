@@ -2,10 +2,10 @@ package LintCode;
 
 
 /**
- * 2. 统计数字
+ * 3. 统计数字
  * @description 计算数字k在0到n中的出现的次数，k可能是0~9的一个值
  * @href https://www.lintcode.com/problem/digit-counts/description
- * @date: 2018-12-25
+ * @date: 2018-12-26
  */
 public class Solution3 {
 
