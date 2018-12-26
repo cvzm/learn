@@ -18,12 +18,12 @@ public class Solution1 {
      */
 //    public static int aplusb(int a, int b) {
 //        int c;
-//        while ((a & b) != 0) {
+//        while ((a & b) != 0) { //没必要使用 &
 //            c = (a & b) << 1;
 //            b = a ^ b;
 //            a = c;
 //        }
-//        return a | b;
+//        return a | b; //没必要使用 |
 //    }
 
     public static int aplusb(int a, int b) {
