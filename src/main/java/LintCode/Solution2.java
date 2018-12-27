@@ -11,7 +11,7 @@ public class Solution2 {
 
     /**
      * 本题需要掌握 阶乘 的基本概念
-     * 参考: https://blog.csdn.net/21aspnet/article/details/7387373
+     * 参考: https://zh.wikipedia.org/wiki/階乘
      * @param n: An integer
      * @return: An integer, denote the number of trailing zeros in n!
      */

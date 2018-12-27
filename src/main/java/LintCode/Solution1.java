@@ -11,7 +11,7 @@ public class Solution1 {
 
     /**
      * 本题需要掌握 位运算，按位与、或、异或等运算方法
-     * 参考: https://blog.csdn.net/21aspnet/article/details/7387373
+     * 参考: https://cvzm.xyz/2018/12/25/理解位运算操作/
      * @param a: An integer
      * @param b: An integer
      * @return: The sum of a and b
