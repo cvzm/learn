@@ -1,8 +1,6 @@
 package LintCode;
 
 
-import java.util.Arrays;
-
 /**
  * 5. 第k大元素
  * @description 在数组中找到第k大的元素, 要求时间复杂度为O(n),空间复杂度为O(1)
