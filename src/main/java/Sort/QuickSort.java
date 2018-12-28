@@ -15,7 +15,7 @@ public class QuickSort {
         if (head >= tail || arr == null || arr.length <= 1)
             return;
         int i=head, j=tail, pivot=arr[(head+tail)/2];
-        while (i <= j) {
+        while (i < j) {
             while (arr[i] < pivot) {
                 ++i;
             }
@@ -26,9 +26,11 @@ public class QuickSort {
                 int t = arr[i];
                 arr[i] = arr[j];
                 arr[j] = t;
+                ++i;
                 --j;
+            } else if (i == j) {
+                ++i;
             }
-            ++i;
         }
         quickSort(arr, head, j);
         quickSort(arr, i, tail);
