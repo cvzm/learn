@@ -5,7 +5,7 @@ package LintCode;
  * 5. 第k大元素
  * @description 在数组中找到第k大的元素, 要求时间复杂度为O(n),空间复杂度为O(1)
  * @href https://www.lintcode.com/problem/kth-largest-element/description
- * @date: 2018-12-27
+ * @date: 2018-12-28
  */
 public class Solution5 {
 
@@ -35,8 +35,8 @@ public class Solution5 {
                 int t = arr[i];
                 arr[i] = arr[j];
                 arr[j] = t;
-                --j;
                 ++i;
+                --j;
             } else if(i == j) {
                 ++i;
             }
@@ -46,7 +46,7 @@ public class Solution5 {
 
     public static void main(String[] args) {
 //        int[] arr = new int[]{1, 4, 8, 2, 55, 3, 4, 8, 6, 4, 0, 11, 34, 90, 23, 54, 77, 9, 2, 9, 4, 10};
-        int[] arr = new int[]{1, 3,4,2};
+        int[] arr = new int[]{1, 3, 4, 2};
         System.out.println(kthLargestElement(1, arr));
 
     }
