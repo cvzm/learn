@@ -52,35 +52,24 @@ public class Solution7 {
         if (data == null || "".equals(data) || SPLICING.equals(data.charAt(0) + ""))
             return null;
         //使用队列更符合目前的场景, 如不使用队列，可以通过移动数组下标实现。
-        TreeNode treeNode = new TreeNode((int) data.charAt(0));
         Queue<TreeNode> queue = new LinkedList<>();
-        String[] ls = data.split(SPLICING);
-        TreeNode temp = treeNode;
-        boolean isLeft = true;
-        for (int i=1; i<ls.length; i++) {
-            if (ls[i].isEmpty()) {
-                isLeft = !isLeft;
-                continue;
-            }
-            TreeNode t = new TreeNode(Integer.parseInt(ls[i]));
-            if (isLeft) {
-                temp.left = t;
-            } else {
-                temp.right = t;
-            }
-
+        for (String valStr : data.split(SPLICING)) {
+            queue.offer("".equals(valStr) ? null : new TreeNode(Integer.parseInt(valStr)));
         }
-        return treeNode;
+        return build(queue);
     }
 
-    public static TreeNode append(String[] ls, int i, TreeNode node, boolean isLeft) {
-        TreeNode t = new TreeNode(Integer.parseInt(ls[i]));
-        if (isLeft) {
-            node.left = t;
-        } else {
-            node.right = t;
-        }
-        append(ls, ++i, node, isLeft);
+    /**
+     * 构建实体
+     * @param queue
+     * @return
+     */
+    public static TreeNode build(Queue<TreeNode> queue) {
+        TreeNode node = queue.poll();
+        if (node == null)
+            return null;
+        node.left = build(queue);
+        node.right = build(queue);
         return node;
     }
 
@@ -95,7 +84,6 @@ public class Solution7 {
         System.out.println(serialize(root));
         TreeNode treeNode = deserialize(serialize(root));
         System.out.println(serialize(treeNode));
-        deserialize(",");
     }
 
 
