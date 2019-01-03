@@ -6,7 +6,7 @@
 
 def removNb(n):
     sum = (n + 1) * n / 2
-    res = list()
+    res = []
     for a in range(1, n + 1):
         # 公式推导: a * b = sum - a - b
         b = (sum - a) / (a + 1)
