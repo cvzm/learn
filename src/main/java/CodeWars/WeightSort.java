@@ -15,7 +15,7 @@ public class WeightSort {
         Arrays.sort(a, (o1, o2) -> {
             if (o1.isEmpty() || o2.isEmpty())
                 return 0;
-            int[] sum = new int[]{0,0};
+            int[] sum = {0,0};
             o1.chars()
                     .filter(i -> i != 48)
                     .forEach(i -> sum[0] += i-48);
