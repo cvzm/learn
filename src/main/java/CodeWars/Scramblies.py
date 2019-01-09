@@ -22,9 +22,10 @@ def scramble(s1, s2):
     c = Counter(s1)
     c.subtract(Counter(s2))
     t = c.most_common()[-1]
-    return t[1] == 0
+    return t[1] >= 0
 
 
 print(scramble('qxerwpxgguiagdcwoazk', 'adizogegwaxckrqwgxpu'))
+print(scramble('aabbcc', 'abc'))
 
 
