@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * 66. 二叉树的前序遍历
- * @description 给出一棵二叉树，返回其节点值的前序遍历。  * 使用非递归实现
- * @href https://www.lintcode.com/problem/binary-tree-preorder-traversal/description
+ * 68. 二叉树的后序遍历
+ * @description 给出一棵二叉树，返回其节点值的后序遍历。  * 使用非递归实现
+ * @href https://www.lintcode.com/problem/binary-tree-postorder-traversal/description
  * @date: 2019-02-21
  */
-public class Solution66 {
+public class Solution68 {
 
     /**
      * Definition of TreeNode:
@@ -27,9 +27,9 @@ public class Solution66 {
 
     /**
      * @param root: A Tree
-     * @return: Preorder in ArrayList which contains node values.
+     * @return: Postorder in ArrayList which contains node values.
      */
-    public static List<Integer> preorderTraversal(TreeNode root) {
+    public static List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new LinkedList<>();
         if (root == null)
             return list;
@@ -37,11 +37,9 @@ public class Solution66 {
         stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
-            list.add(node.val);
-            if (node.right != null)
-                stack.push(node.right);
-            if (node.left != null)
-                stack.push(node.left);
+            list.add(0, node.val);
+            if (node.left != null) stack.push(node.left);
+            if (node.right != null) stack.push(node.right);
         }
         return list;
     }
@@ -52,7 +50,7 @@ public class Solution66 {
         node.left = new TreeNode(2);
         node.right = new TreeNode(3);
         node.left.left = new TreeNode(4);
-        preorderTraversal(node);
+        postorderTraversal(node);
     }
 
 

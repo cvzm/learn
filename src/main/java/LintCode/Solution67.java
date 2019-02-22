@@ -1,7 +1,7 @@
 package LintCode;
 
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -30,7 +30,7 @@ public class Solution67 {
      * @return: Inorder in ArrayList which contains node values.
      */
     public static List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new LinkedList<>();
         if (root == null)
             return list;
         Stack<TreeNode> stack = new Stack<>();
