@@ -9,7 +9,6 @@ package Nowcoder;
  */
 public class ReplaceBlankSpace {
 
-    //TODO 可改为流操作
     public static String replaceSpace(StringBuffer str) {
         char[] strChar = str.toString().toCharArray();
         StringBuffer res = new StringBuffer();
@@ -19,11 +18,10 @@ public class ReplaceBlankSpace {
         return res.toString();
     }
 
-
-
     public static void main(String[] args) {
         System.out.println(replaceSpace(new StringBuffer("asd asd  123 ")));
     }
 
 
 }
+
