@@ -38,9 +38,7 @@ class Solution:
             count = count + 1
         if k > count:
             return None
-        print(count)
         count = count - k
-        print(count)
         next = head
         while count > 0:
             next = next.next
