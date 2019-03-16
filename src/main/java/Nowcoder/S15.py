@@ -16,15 +16,12 @@ class Solution:
     # 时间O(n), 空间O(n)
     def ReverseList(self, pHead):
         res = None
-        next = pHead
-        while next:
+        while pHead:
             old = res
-            res = ListNode(next.val)
+            res = ListNode(pHead.val)
             res.next = old
-            next = next.next
+            pHead = pHead.next
         return res
-
-
 
 
 s = Solution()
