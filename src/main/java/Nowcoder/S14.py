@@ -13,7 +13,7 @@ class ListNode:
 
 class Solution:
 
-    # 时间O(n), 空间O(n)
+    # 时间O(n)
     def FindKthToTail(self, head, k):
         if not head or k == 0:
             return None
@@ -26,24 +26,6 @@ class Solution:
             return None
         return res[len(res) - k]
 
-    # 时间O(2n), 空间O(1)
-    # 将倒序转为正序
-    def FindKthToTail2(self, head, k):
-        if not head or k == 0:
-            return None
-        count = 0
-        next = head
-        while next:
-            next = next.next
-            count = count + 1
-        if k > count:
-            return None
-        count = count - k
-        next = head
-        while count > 0:
-            next = next.next
-            count = count - 1
-        return next
 
 
 
