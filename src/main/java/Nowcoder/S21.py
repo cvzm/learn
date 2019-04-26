@@ -20,7 +20,6 @@ class Solution:
                 temp.append(v)
             else:
                 popI += 1
-        print(temp)
         for i in temp:
             if temp.pop() != popV[popI]:
                 return False
