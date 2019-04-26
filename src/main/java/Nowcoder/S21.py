@@ -11,6 +11,24 @@
 
 class Solution:
 
+    # 用辅助栈实现
+    def IsPopOrder2(self, pushV, popV):
+        temp = []
+        popI = 0
+        for v in pushV:
+            if v != popV[popI]:
+                temp.append(v)
+            else:
+                popI += 1
+        print(temp)
+        for i in temp:
+            if temp.pop() != popV[popI]:
+                return False
+            popI += 1
+
+        return True
+
+    # 简单递归实现
     def IsPopOrder(self, pushV, popV):
         # 长度
         size = len(pushV)
@@ -57,9 +75,9 @@ class Solution:
 s = Solution()
 # [4,5,6,7,1,2,3]
 # [7,6,5,4,3,2,1]
-# print(s.IsPopOrder([1,2,3,4,5,6,7], [4,5,6,7,3,2,1]))
-# print(s.IsPopOrder([1,2,3,4,5], [4,5,3,2,1]))
-print(s.IsPopOrder([1], [2]))
+print(s.IsPopOrder2([1,2,3,4,5,6,7], [4,5,6,7,3,2,1]))
+# print(s.IsPopOrder2([1,2,3,4,5], [4,5,3,2,1]))
+# print(s.IsPopOrder([1], [2]))
 
 
 # 1  2  3  4  5  6  7
