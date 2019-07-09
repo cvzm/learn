@@ -5,13 +5,14 @@
     @href https://www.nowcoder.com/practice/8fecd3f8ba334add803bf2a06af1b993
 """
 
+# 放在方法内，会拖累性能
+from functools import cmp_to_key
 
 class Solution:
 
     def PrintMinNumber(self, numbers):
         if not numbers:
             return ""
-        from functools import cmp_to_key
         compare = cmp_to_key(lambda x, y: int(str(x) + str(y)) - int(str(y) + str(x)))
         cur = sorted(numbers, key=compare)
         return "".join(str(s) for s in cur)
