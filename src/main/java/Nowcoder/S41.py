@@ -31,7 +31,6 @@ class Solution:
                 right += self.DEVIATION
             else:
                 if total == tsum:
-                    print("✌️✌️✌️✌️✌️✌️")
                     result.append([left, right])
                 left += self.DEVIATION
                 right = left + self.DEVIATION
@@ -60,5 +59,6 @@ class Solution:
 
 
 s = Solution()
+print("✌️✌️✌️✌️✌️✌️")
 print(s.FindContinuousSequence(3))
 
