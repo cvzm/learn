@@ -9,5 +9,6 @@
 class Solution:
 
     def Sum_Solution(self, n):
-        return (n + 1) * n / 2
+        return n + (n and self.Sum_Solution(n - 1))
+
 
