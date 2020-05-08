@@ -1,4 +1,4 @@
-package LintCode
+package main
 
 func waysToChange(n int) int {
 	dp := make([]int, n+1)
